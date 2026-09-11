@@ -23,9 +23,11 @@ export default function Certificate() {
   return (
     <article className="certificate">
       <div className="cute-card">
-        <div className="sticker sticker-fun">100% Fun</div>
-        <div className="sticker sticker-drama">No Drama</div>
-        <div className="sticker sticker-trip">Trip Approved</div>
+        <div className="sticker-row">
+          <div className="sticker sticker-drama">No Drama</div>
+          <div className="sticker sticker-fun">100% Fun</div>
+          <div className="sticker sticker-trip">Trip Approved</div>
+        </div>
         <div className="icon icon-camera"><CameraIcon /></div>
         <div className="icon icon-bag"><SuitcaseIcon /></div>
 

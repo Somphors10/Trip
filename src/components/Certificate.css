@@ -5,6 +5,7 @@
   --mint: #7ed8c4;
   --lilac: #c3a6ff;
   width: 297mm;
+  max-width: 100%;
   height: 210mm;
   padding: 6mm;
   background: linear-gradient(180deg, #ffd6ea 0%, #efe0ff 100%);
@@ -25,6 +26,10 @@
   flex-direction: column;
   gap: 2.5mm;
   overflow: hidden;
+}
+
+.sticker-row {
+  position: static;
 }
 
 .sticker {
@@ -319,8 +324,128 @@
 
 @media print {
   .certificate {
+    width: 297mm;
+    max-width: none;
+    height: 210mm;
     box-shadow: none;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .certificate {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .cute-card {
+    height: auto;
+    overflow: visible;
+    padding: 18px 16px 20px;
+    gap: 16px;
+    border-radius: 28px;
+    box-shadow: inset 0 0 0 8px #fff, inset 0 0 0 12px #ffc2dc;
+  }
+
+  .sticker-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .sticker {
+    position: static;
+    transform: none;
+  }
+
+  .icon-camera,
+  .icon-bag {
+    display: none;
+  }
+
+  .main-title {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .member-photos {
+    gap: 12px;
+  }
+
+  .photo-slot {
+    width: min(100%, 160px);
+  }
+
+  .photo-frame {
+    height: 180px;
+  }
+
+  .body-grid {
+    grid-template-columns: 1fr;
+    flex: none;
+  }
+
+  .panel {
+    overflow: visible;
+  }
+
+  .field-row input {
+    font-size: 16px;
+  }
+
+  .sign-grid {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .cute-stamp {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .certificate {
+    padding: 10px;
+  }
+
+  .cute-card {
+    padding: 14px 12px 16px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .member-photos {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .photo-slot {
+    width: min(100%, 240px);
+  }
+
+  .photo-frame {
+    height: min(52vw, 260px);
+  }
+
+  .badge {
+    font-size: 10px;
+  }
+
+  .trip-place {
+    font-size: 12px;
+  }
+
+  .fields-block h3,
+  .rules-block h3,
+  .signature-block h3 {
+    font-size: 15px;
+  }
+
+  .rules-block li {
+    font-size: 13px;
+    grid-template-columns: 28px 1fr;
   }
 }

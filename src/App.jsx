@@ -13,7 +13,9 @@ export default function App() {
           Print / Save A4 PDF
         </button>
       </header>
-      <Certificate />
+      <div className="certificate-stage">
+        <Certificate />
+      </div>
     </div>
   )
 }
